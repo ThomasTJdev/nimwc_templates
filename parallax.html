@@ -1,0 +1,147 @@
+<!--
+Template for using with www.nimwc.org
+
+Copy and paste the data directly into a blog or page.
+-->
+<style>
+body [class*="bg__"] {
+  position: relative;
+  height: 300px;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+}
+body [class*="bg__"]:nth-child(2n) {
+  box-shadow: inset 0 0 1em #111;
+}
+body .bg__foo, body .bg__bar, body .bg__baz {
+  height: 100vh;
+}
+body .bg__foo {
+  background-image: url(/images/par1.jpeg);
+}
+body .bg__bar {
+  background-image: url(/images/par2.jpeg);
+}
+body .bg__baz {
+  background-image: url(/images/par3.jpeg);
+}
+
+#pagewrapper {
+  background: rgb(28, 26, 51);
+  width: 100%;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+@media only screen and (max-width: 1200px) {
+  #pagewrapper {
+    width: 100%
+  }
+}
+
+#page {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 48px;
+  margin-bottom: 96px;
+}
+
+footer {
+  border-top: 1px solid #dee2e6;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background: rgb(28, 26, 51);
+  z-index: 999;
+}
+  
+footer #footerInside {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .footerLeft u,
+footer .footerMiddle,
+footer .footerRight u {
+  color:white;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+}
+nav#navbar{
+  background-color: transparent;
+  border-bottom: 1px solid #dee2e6;
+  display: block;
+  z-index: 999;
+  background: #1c1a33;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+}
+nav#navbar #navbarInside {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+nav#navbar .navbar-brand {
+  color: white;
+}
+nav#navbar a.nav-link {
+  color: white;
+}
+nav#navbar .navbar-toggler {
+  border: none;
+}
+@media only screen and (min-width: 768px) {
+  nav#navbar {
+    display: block;
+  }
+}
+
+
+/* Navbar settings */
+div#navbarSettings {
+  z-index: 1000;
+}
+div#navbarSettings a {
+  color: white;
+}
+div#navbarSettings .dropdown-menu a {
+  color: black;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/css/animations.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.min.js" defer=""></script>
+<div>
+  <div class="bg__foo">
+    <div class="animatedParent" style="padding-top: 150px;max-width: 200px;margin-left: auto;margin-right: auto;">
+      <div class="animated bounceInRight go" style="background: black;color: white;padding: 20px;border-radius: 10px;text-align: center;">
+        <h1>First parallax</h1>
+      </div>
+    </div>
+  </div>
+  <div class="bg__bar">
+    <div class="animatedParent" data-appear-top-offset="-300" style="padding-top: 150px;max-width: 200px;margin-left: auto;margin-right: auto;">
+      <div class="animated fadeInUp" style="background: white;color: black;padding: 20px;border-radius: 10px;text-align: center;">
+        <h1>Second parallax</h1>
+      </div>
+    </div>
+  </div>
+  <div class="bg__baz">
+    <div class="animatedParent" data-appear-top-offset="-300" style="padding-top: 150px;max-width: 200px;margin-left: auto;margin-right: auto;">
+      <div class="animated growIn" style="background: rgb(88, 234, 94);color: rgb(165, 68, 236);padding: 20px;border-radius: 10px;text-align: center;">
+        <h1>Third parallax</h1>
+      </div>
+    </div>
+  </div>
+</div>
