@@ -218,7 +218,7 @@ proc templatesApply*(db: DbConn, userID, templateName: string): string =
 
       # Delete conflicting page
       exec(db, sql"DELETE FROM blog WHERE url = ?", page[2])
-      discard tryInsertID(db, sql"INSERT INTO   (status, name, url, description, head, navbar, footer, standardhead, standardnavbar, standardfooter, tags, category, date_start, date_end, public, author_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", page[0], page[1], page[2], page[3], page[4], page[5], page[6], page[7], page[8], page[9], page[10], page[11], page[12], page[13], page[14], userID)
+      discard tryInsertID(db, sql"INSERT INTO blog (status, name, url, description, head, navbar, footer, standardhead, standardnavbar, standardfooter, tags, category, date_start, date_end, public, author_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", page[0], page[1], page[2], page[3], page[4], page[5], page[6], page[7], page[8], page[9], page[10], page[11], page[12], page[13], page[14], userID)
 
 
   # Copy settings
