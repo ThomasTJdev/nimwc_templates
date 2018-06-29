@@ -1,0 +1,76 @@
+#? stdtmpl | standard
+#
+#template `%`(idx: untyped): untyped =
+#  row[idx]
+#end template
+#
+#
+#
+#proc genTemplatesSettings*(c: var TData, msg = ""): string =
+# result = ""
+
+<link rel="stylesheet" href="/css/templates_private.css">
+
+# if msg != "":
+<div style="color: red; text-align: center">
+  ${decodeUrl(msg)}
+</div>
+# end if
+
+<div id="templates">
+  <div>
+    <h1>Themes settings</h1>
+  </div>
+  
+  <div id="templatesFront" style="width: 300px; margin-right: auto;">
+  
+    <div>----------------------------------------------------------------</div>
+    <div> Package:      $pluginTitle plugin</div>
+    <div> Author:       $pluginAuthor</div>
+    <div> Version:      $pluginVersion</div>
+    <div> Version date: $pluginVersionDate</div>
+    <div>----------------------------------------------------------------</div>
+  
+  </div>
+  
+  <hr>
+
+  <form class="tmpl" method="get" action="/templates/new">
+    <label><b>New template</b></label>
+    <input name="templatename" required />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <i>This will save your current style.css and all your blogpages, pages and settings in a template file.</i>
+  </form>
+
+  <hr>
+
+  <form class="tmpl" method="get" action="/templates/delete">
+    <label><b>Delete a template</b></label>
+    <input name="templatename" required />
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <i>Write the name of template to delete.</i>
+  </form>
+
+  <hr>
+
+  <div>
+    <b>Apply template</b>
+    <i>If you apply a template, your main settings and style.css will be overridden! Depending on the template, your frontpage or others might also be overridden.</i>
+  </div>
+
+  <ul class="tmpl">
+
+#   var defaultSheet = false
+#   for plugin in walkDir("plugins/templates/archive/"):
+#     let (pd, ppath) = plugin
+#     discard pd
+#     let templName = replace(ppath, "plugins/templates/archive/", "")
+#
+        <li class="tmpl"><a href="/templates/apply?templatename=$templName">Apply</a><span>$templName</span></li>
+#       
+#   end for
+  </ul>
+  
+</div>
+
+#end proc
