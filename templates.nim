@@ -185,21 +185,20 @@ proc templatesApply*(db: DbConn, userID, templateName: string): string =
 
 
   # Copy style.css
-  if not fileExists("plugins/templates/archive/" & templateName & "/style.css"):
-    return "The stylesheet could not be found"
+  if fileExists("plugins/templates/archive/" & templateName & "/style.css"):
+    copyFile("plugins/templates/archive/" & templateName & "/style.css", "public/css/style.css")
     
-  copyFile("plugins/templates/archive/" & templateName & "/style.css", "public/css/style.css")
 
 
   # Copy js.js
-  if not fileExists("plugins/templates/archive/" & templateName & "/js.js"):
-    return "The javascript file could not be found"
+  if fileExists("plugins/templates/archive/" & templateName & "/js.js"):
+    copyFile("plugins/templates/archive/" & templateName & "/js.js", "public/js/js.js")
     
-  copyFile("plugins/templates/archive/" & templateName & "/js.js", "public/js/js.js")
 
 
   # Copy all images
-  copyDir("plugins/templates/archive/" & templateName & "/images", "public/images")
+  if dirExists("plugins/templates/archive/" & templateName & "/images"):
+    copyDir("plugins/templates/archive/" & templateName & "/images", "public/images")
 
 
   # Copy pages
