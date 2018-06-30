@@ -17,3 +17,11 @@ This plugin adds the following to the template:
 
 ## Requirement
 This is a plugin for [Nim Website Creator](https://github.com/ThomasTJdev/nim_websitecreator) and can not be compiled individually.
+
+# Templates
+
+## Nim Website Creator official template
+
+Used on [NimWC.org](https://nimwc.org)
+
+![nimwc](archive/NimWC_official/screenshot.png)
