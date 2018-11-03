@@ -9,37 +9,39 @@
 #proc genTemplatesSettings*(c: var TData, msg = ""): string =
 # result = ""
 
+<link rel="stylesheet" href="/css/style_admin.css">
 <link rel="stylesheet" href="/css/templates_private.css">
 
-# if msg != "":
-<div style="color: red; text-align: center">
-  ${decodeUrl(msg)}
-</div>
-# end if
-
 <div id="templates">
-  <div>
-    <h1>Themes settings</h1>
+
+  # if msg != "":
+  <div style="color: red; text-align: center">
+    ${decodeUrl(msg)}
   </div>
-  
+  # end if
+
   <div id="templatesFront" style="width: 300px; margin-right: auto;">
-  
-    <div>----------------------------------------------------------------</div>
-    <div> Package:      $pluginTitle plugin</div>
-    <div> Author:       $pluginAuthor</div>
-    <div> Version:      $pluginVersion</div>
-    <div> Version date: $pluginVersionDate</div>
-    <div>----------------------------------------------------------------</div>
-  
+    <h1>Templates settings</h1>
+
+    # let (n, v, d, u) = pluginExtractDetails("templates")
+    <div id="pluginDetails">
+      <hr>
+      <div> <b>Package:</b> ${n}</div>
+      <div> <b>Version:</b> ${v}</div>
+      <div> <b>Description:</b><br>${d}</div>
+      <div> <b>URL:</b> <a href="${u}">${u}</a></div>
+      <hr>
+    </div>
+
   </div>
-  
+
   <hr>
 
   <form class="tmpl" method="get" action="/templates/new">
     <label><b>New template</b></label>
     <input name="templatename" required />
     <button type="submit" class="btn btn-primary">Save</button>
-    <i>This will save your current style.css and all your blogpages, pages and settings in a template file.</i>
+    <i>This will save your current CSS, JS and all your blogpages, pages and settings in a template file.</i>
   </form>
 
   <hr>
@@ -55,7 +57,8 @@
 
   <div>
     <b>Apply template</b>
-    <i>If you apply a template, your main settings and style.css will be overridden! Depending on the template, your frontpage or others might also be overridden.</i>
+    <br>
+    <i>If you apply a template, your main settings, CSS and JS will be overwritten. All pages, blogpost and images with conflicting names will be overwritten!</i>
   </div>
 
   <ul class="tmpl">
@@ -67,10 +70,10 @@
 #     let templName = replace(ppath, "plugins/templates/archive/", "")
 #
         <li class="tmpl"><a href="/templates/apply?templatename=$templName">Apply</a><span>$templName</span></li>
-#       
+#
 #   end for
   </ul>
-  
+
 </div>
 
 #end proc

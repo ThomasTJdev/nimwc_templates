@@ -1,10 +1,14 @@
 /* This plugin style_private.css file will be added to the public folder, but no automated import of the file will be generated */
 
 div#templates {
-  max-width: 600px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid gray;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  max-width: 800px;
+  padding: 10px;
 }
 div#templates li.tmpl a {
   margin-right: 10px;
@@ -34,4 +38,11 @@ div#templates form.tmpl {
 div#templates form.tmpl i,
 div#templates form.tmpl label {
   display: block;
+}
+div#templatesFront {
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 500px;
 }
