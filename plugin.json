@@ -2,7 +2,8 @@
   {
     "name": "Templates",
     "foldername": "templates",
-    "version": "0.2",
+    "version": "0.3",
+    "requires": "6.0",
     "url": "https://github.com/ThomasTJdev/nimwc_templates.git",
     "method": "git",
     "tags": [
@@ -10,6 +11,8 @@
     ],
     "description": "Full templates. Includes database, css, js and images.",
     "license": "MIT",
-    "web": "https://github.com/ThomasTJdev/nimwc_templates"
+    "web": "https://github.com/ThomasTJdev/nimwc_templates",
+    "sustainability": "",
+    "email": "codefactory@ttj.dk"
   }
 ]
